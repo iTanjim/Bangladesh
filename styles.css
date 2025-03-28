@@ -10,6 +10,7 @@ html{
 body{
     font-size: 1.3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #F5F5F5;
 }
 
 header{
@@ -26,7 +27,7 @@ header{
 }
 
 .vertical-scroll {
-    height: 300vh;
+    /* height: 300vh; */
 }
 
 .cont-wrapper{
@@ -44,11 +45,12 @@ header{
     width: 100%;
     height: 100%;
     display: flex;
-    border: 1px solid black;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     background-color: white;
     position: absolute;
     inset: 0;
     overflow: hidden;
+    
 }
 
 .slide > * {
@@ -72,6 +74,7 @@ header{
 .left-text{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-direction: column;
     padding: 0 5rem 5rem 5rem;
     position: relative;
@@ -88,9 +91,11 @@ header{
         font-weight: 100;
         position: absolute;
         top: 13%;
+        left: 20%;
     }
 
     div{
+        width: 70%;
         h3{
             font-size: 4rem;
         }
@@ -98,4 +103,32 @@ header{
             font-size: 1.6rem;
         }
     }
+}
+
+.images-wrapper{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-cont{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }   
+}
+
+.img-2{
+    clip-path: polygon(40% 25%, 60% 25%, 60% 75%, 40% 75%);
+}
+.img-3{
+    clip-path: polygon(50% 25%, 50% 25%, 50% 75%, 50% 75%);
 }
