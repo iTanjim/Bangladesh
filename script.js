@@ -82,9 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.to(".img-2 img", {
     // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%",
     ease: "none",
+    onComplete: () => console.log("completed"),
     scrollTrigger: {
       trigger: ".images-wrapper",
       start: "top top",
+
       end: `+=${window.innerHeight}`,
       scrub: true,
       onUpdate: (self) => {
@@ -117,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
   gsap.to(".img-3 img", {
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%",
     ease: "none",
     scrollTrigger: {
       trigger: ".images-wrapper",
@@ -127,6 +128,42 @@ document.addEventListener("DOMContentLoaded", () => {
       onUpdate: (self) => {
         const progress = self.progress;
         gsap.set(".img-3", {
+          clipPath: `polygon(
+            ${gsap.utils.interpolate(
+              50,
+              0,
+              progress
+            )}% ${gsap.utils.interpolate(50, 0, progress)}%,
+            ${gsap.utils.interpolate(
+              50,
+              100,
+              progress
+            )}% ${gsap.utils.interpolate(50, 0, progress)}%,
+            ${gsap.utils.interpolate(
+              50,
+              100,
+              progress
+            )}% ${gsap.utils.interpolate(50, 100, progress)}%,
+            ${gsap.utils.interpolate(
+              50,
+              0,
+              progress
+            )}% ${gsap.utils.interpolate(50, 100, progress)}%
+            )`,
+        });
+      },
+    },
+  });
+  gsap.to(".img-4 img", {
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".images-wrapper",
+      start: `${window.innerHeight * 7}`,
+      end: `${window.innerHeight * 8}`,
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        gsap.set(".img-4", {
           clipPath: `polygon(
             ${gsap.utils.interpolate(
               50,

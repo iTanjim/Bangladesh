@@ -123,6 +123,18 @@ header{
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    h1{
+        font-size: 3rem;
+        color: white;
+        position: absolute;
+        top: 1%;
+        left: 1%;
+        padding: 1rem 2rem;
+        box-shadow: 0 0 1px white;
+        border-radius: 7px;
+        background-image: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0.4));
+        backdrop-filter: blur(17px);
     }   
 }
 
@@ -131,4 +143,11 @@ header{
 }
 .img-3{
     clip-path: polygon(50% 25%, 50% 25%, 50% 75%, 50% 75%);
+}
+.img-4{
+    clip-path: polygon(50% 25%, 50% 25%, 50% 75%, 50% 75%);
+}
+
+footer {
+    height: 50vh;
 }
